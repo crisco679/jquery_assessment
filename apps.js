@@ -1,23 +1,15 @@
 $(function(){
-
-  var generateCounter = 0;
-  $(".generate").on("click",function(){
-    generateCounter++;
-    $("#buttonHolder").show("#buttonHolder");
-    $(".dSpan").text(generateCounter);
-    $(".cSpan").text(generateCounter);
-
+  var counter = 0;
+  $('#generate').on('click',function(){
+    counter++
+    $('body').append('<div class=\'yellow red\'><p>Generate has been pressed '  + counter + ' time(s)'  + '</p><button class=\'delete\'>Delete</button><button class=\'change\'>Change</button></div>')
   });
-  $(".delete").on("click",function(){
-    $("#buttonHolder").remove();
+  $(document).on('click','.delete',function(){
+    $(this).parent().remove();
   });
-  $(".change").on("click",function(){
-    $("html").toggleClass("yellow");
-  })
-
-
-
-
+  $(document).on('click','.change',function(){
+    $(this).parent().toggleClass('yellow');
+  });
 
 
 
